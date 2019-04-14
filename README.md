@@ -1,20 +1,8 @@
-# node-json
+# gdrive-json
 
-TODO: Update these instructions, as well as args for index.js.
+This is a script to download a Google Drive video collection to a structured JSON file, including thumbnail references and playback information.
 
 ## Getting started
-
-### Enable Drive API
-
-Visit https://console.developers.google.com and enable the Drive API for your project.
-
-Download your client configuration and save the `credentials.json` to the project home directory.
-
-### Fetch your video directory ID
-
-*TODO: Create instruction here*
-
-The video directory ID will be the parent folder for all videos.
 
 ### Structure your content
 
@@ -29,20 +17,25 @@ Videos in the directory above should be contained in folders, with video files d
 	 - Thumbnail 2.png
 	 - ...
 - Video 2
-	- Part 1.avi
-	- Part 2.avi
+	- Full Video.avi
 	- Thumbnail 1.png
 	- ...
 - ...
 
+### Enable Drive API
 
-### Generate your json output
-Using the parent directory above, run the following command, specifying your video directory and json output:
+Visit https://console.developers.google.com and enable the Drive API for your project.
 
-`node index.js list YOUR_ROOT_DIRECTORY JSON_FILE`
- 
-#### Append thumbnails
-`node index.js thumbs JSON_FILE`
+Download your client configuration and save the `credentials.json` to the project home directory.
 
-#### Append videos
-`node index.js videos JSON_FILE`
+### Fetch your video directory ID
+
+The video directory ID will be the parent folder for all videos.
+
+Open `start.sh` and replace `VIDEO_DIRECTORY_ID` with the ID of your Google Drive video directory.
+
+### Run start.sh
+
+Follow the instructions to authorise your app to read from Google Drive.
+
+Once this script has finished, it will generate `videos.json` and populate `/images`.

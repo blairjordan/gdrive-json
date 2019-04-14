@@ -16,11 +16,11 @@ fs.readFile("credentials.json", (err, content) => {
   if (err) return console.log("Error loading client secret file:", err);
   
   if (op === "list")
-    authorize(JSON.parse(content), listFiles); // 1. fetch folder list
+    authorize(JSON.parse(content), listFiles);
   else if (op === "thumbs")
-    authorize(JSON.parse(content), fetchThumbs); // 2. fetch thumbnails list
+    authorize(JSON.parse(content), fetchThumbs);
   else if (op === "videos")
-    authorize(JSON.parse(content), fetchVideos); // 3. fetch video list
+    authorize(JSON.parse(content), fetchVideos);
   else
     console.log("unknown op");
 });
@@ -196,7 +196,7 @@ const listFiles = auth => {
     pageSize: 1000,
     fileId,
     fields: "nextPageToken, files(id, name, parents, mimeType, modifiedTime, trashed)",
-    q: `"${fileId}" in parents and (mimeType contains 'folder' )`,
+    q: `"${fileId}" in parents and (mimeType contains 'folder')`,
     orderBy: "name"
   }, (err, res) => {
     if (err) { console.log(err); return err; }
