@@ -6,7 +6,7 @@ This is a script to download a Google Drive video collection to a structured JSO
 
 ### Structure your content
 
-Videos in the directory above should be contained in folders, with video files directly contained under each folder, along with any thumbnails or cover art.
+Your videos should be contained in named folders, with video files directly contained under each folder, along with any thumbnails or cover art.
 
 **Example:**
 
